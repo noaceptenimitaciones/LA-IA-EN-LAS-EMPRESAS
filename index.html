@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprende algoritmos para calcular el área de un terreno rectangular mediante ejemplos y actividades interactivas.">
+    <title>Laboratorio de Algoritmos | Área de un terreno</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#inicio" class="logo">LAB<span>/</span>ALG</a>
+
+        <nav id="navigation">
+            <a href="#concepto">Concepto</a>
+            <a href="#calculadora">Calculadora</a>
+            <a href="#algoritmos">Algoritmos</a>
+            <a href="#reto">Evaluación</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+    <main>
+        <!-- PORTADA -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="eyebrow">MATEMÁTICAS + PROGRAMACIÓN</span>
+
+                <h1>Calcula el área de un terreno <span>rectangular</span></h1>
+
+                <p>
+                    Descubre cómo transformar un problema de la vida real
+                    en un algoritmo. Aprende la fórmula, experimenta con
+                    diferentes medidas y comprueba tus conocimientos.
+                </p>
+
+                <a href="#calculadora" class="button primary">
+                    Comenzar a aprender →
+                </a>
+            </div>
+
+            <div class="land-card">
+                <span class="card-label">MODELO GEOMÉTRICO</span>
+
+                <div class="rectangle">
+                    <span class="length-label">20 metros</span>
+                    <span class="width-label">12 metros</span>
+                    <div>
+                        <strong>240 m²</strong>
+                        <small>Área del terreno</small>
+                    </div>
+                </div>
+
+                <p>Área = largo × ancho</p>
+            </div>
+        </section>
+
+        <!-- CONCEPTO -->
+        <section class="section" id="concepto">
+            <span class="eyebrow">01 — CONCEPTOS BÁSICOS</span>
+            <h2>¿Cómo funciona el cálculo?</h2>
+
+            <p class="section-description">
+                Para conocer la superficie de un terreno rectangular,
+                necesitamos identificar dos medidas y multiplicarlas.
+            </p>
+
+            <div class="cards">
+                <article class="info-card">
+                    <span class="number">01</span>
+                    <h3>Entrada de datos</h3>
+                    <p>
+                        Obtener el largo y el ancho del terreno
+                        en la misma unidad de medida.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <span class="number">02</span>
+                    <h3>Procesamiento</h3>
+                    <p>
+                        Multiplicar el largo por el ancho para
+                        obtener la superficie.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <span class="number">03</span>
+                    <h3>Salida de datos</h3>
+                    <p>
+                        Mostrar el resultado en unidades cuadradas,
+                        por ejemplo, metros cuadrados.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FÓRMULA -->
+        <section class="formula-section">
+            <div>
+                <span class="eyebrow">LA FÓRMULA</span>
+                <h2>Una operación sencilla</h2>
+                <p>El área representa la superficie que ocupa el terreno.</p>
+            </div>
+
+            <div class="formula">
+                <span>A</span>
+                <span>=</span>
+                <span>L</span>
+                <span>×</span>
+                <span>W</span>
+            </div>
+        </section>
+
+        <!-- CALCULADORA -->
+        <section class="section" id="calculadora">
+            <span class="eyebrow">02 — EXPERIMENTA</span>
+            <h2>Calculadora interactiva</h2>
+
+            <p class="section-description">
+                Modifica las dimensiones y observa cómo cambia el área.
+            </p>
+
+            <div class="calculator">
+                <div class="calculator-form">
+                    <label for="largo">Largo del terreno (metros)</label>
+                    <input type="number" id="largo"
+                           min="0.01" step="any" value="20">
+
+                    <label for="ancho">Ancho del terreno (metros)</label>
+                    <input type="number" id="ancho"
+                           min="0.01" step="any" value="12">
+
+                    <button class="button primary" id="calculateBtn">
+                        Calcular área
+                    </button>
+
+                    <p id="error" class="error" role="alert"></p>
+                </div>
+
+                <div class="result">
+                    <span>ÁREA TOTAL</span>
+                    <strong id="resultado" aria-live="polite">240</strong>
+                    <p>metros cuadrados (m²)</p>
+
+                    <div class="operation" id="operacion">
+                        20 × 12 = 240
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALGORITMOS -->
+        <section class="section" id="algoritmos">
+            <span class="eyebrow">03 — APRENDE A PROGRAMAR</span>
+            <h2>Cuatro formas de resolverlo</h2>
+
+            <p class="section-description">
+                La lógica es la misma, aunque cambie la manera de
+                representar las instrucciones.
+            </p>
+
+            <div class="tabs">
+                <button class="tab active" data-mode="pseudo">
+                    Pseudocódigo
+                </button>
+                <button class="tab" data-mode="javascript">
+                    JavaScript
+                </button>
+                <button class="tab" data-mode="python">
+                    Python
+                </button>
+                <button class="tab" data-mode="flujo">
+                    Diagrama
+                </button>
+            </div>
+
+            <div class="code-panel">
+                <div class="code-header">
+                    <span id="codeTitle">Pseudocódigo</span>
+                    <button id="copyBtn">Copiar código</button>
+                </div>
+
+                <pre><code id="codeContent">INICIO
+    LEER largo
+    LEER ancho
+    area ← largo * ancho
+    ESCRIBIR area
+FIN</code></pre>
+
+                <div id="flowchart" hidden>
+                    <div class="flow-node">INICIO</div>
+                    <span>↓</span>
+                    <div class="flow-node">Leer largo y ancho</div>
+                    <span>↓</span>
+                    <div class="flow-node">Área = largo × ancho</div>
+                    <span>↓</span>
+                    <div class="flow-node">Mostrar resultado</div>
+                    <span>↓</span>
+                    <div class="flow-node">FIN</div>
+                </div>
+            </div>
+
+            <p id="codeDescription" class="section-description">
+                El pseudocódigo explica los pasos del algoritmo
+                sin depender de un lenguaje específico.
+            </p>
+        </section>
+
+        <!-- EVALUACIÓN -->
+        <section class="quiz-section" id="reto">
+            <div class="section">
+                <span class="eyebrow">04 — PON A PRUEBA LO APRENDIDO</span>
+                <h2>¿Cuánto has aprendido?</h2>
+
+                <div class="quiz-card">
+                    <p id="questionCounter">Pregunta 1 de 3</p>
+                    <h3 id="question">¿Cómo se calcula el área?</h3>
+
+                    <div id="answers" class="answers"></div>
+
+                    <p id="feedback" aria-live="polite"></p>
+
+                    <button id="nextBtn" class="button primary" disabled>
+                        Siguiente pregunta →
+                    </button>
+
+                    <p id="score"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#inicio" class="logo">LAB<span>/</span>ALG</a>
+        <p>Aprender algoritmos resolviendo problemas reales.</p>
+        <a href="#inicio">Volver arriba ↑</a>
+    </footer>
+
+</body>
+</html>
